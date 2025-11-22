@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billing Form</title>
+
+<style>
+    body {
+        background: #f2f3f8;
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        padding: 30px;
+    }
+
+    #billing-form {
+        max-width: 900px;
+        margin: auto;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0px 8px 30px rgba(0,0,0,0.1);
+    }
+
+    #billing-form h2 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #222;
+    }
+
+    
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-bottom: 20px;
+    }
+    .checkbox-group input {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
+    
+    fieldset {
+        border: 1px solid #e0e0e0;
+        padding: 20px;
+        border-radius: 14px;
+        margin-top: 25px;
+        background: #fafafa;
+    }
+    legend {
+        font-size: 18px;
+        font-weight: 600;
+        padding: 0 10px;
+        color: #222;
+    }
+
+    
+    .address-fieldset,
+    .payment-fieldset {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .full-width { width: 100%; }
+    .half-width { width: calc(50% - 10px); }
+    .third-width { width: calc(33.33% - 14px); }
+
+    
+    label {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 6px;
+        color: #333;
+    }
+
+    
+    input, select {
+        padding: 12px 14px;
+        border: 1px solid #dcdcdc;
+        border-radius: 10px;
+        font-size: 14px;
+        outline: none;
+        transition: 0.2s;
+        background: #ffffff;
+    }
+    input::placeholder {
+        color: #aaa;
+    }
+    input:focus, select:focus {
+        border-color: #6a5af9;
+        box-shadow: 0px 0px 6px rgba(106, 90, 249, 0.3);
+    }
+
+    
+    .security-note {
+        margin-top: 6px;
+        font-size: 13px;
+        color: #666;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    
+    .submit-button {
+        margin-top: 30px;
+        width: 100%;
+        padding: 16px;
+        font-size: 18px;
+        font-weight: 600;
+        background: linear-gradient(135deg, #6a5af9, #7a4df3);
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 8px 24px rgba(106, 90, 249, 0.35);
+        transition: 0.25s ease-in-out;
+    }
+    .submit-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(106, 90, 249, 0.45);
+    }
+    .submit-button:active {
+        transform: scale(0.98);
+    }
+
+    
+    @media (max-width: 768px) {
+        .half-width, .third-width {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<form id="billing-form">
+    <h2>Billing Information</h2>
+    
+    <div class="checkbox-group">
+        <input type="checkbox" id="same-as-shipping" checked>
+        <label for="same-as-shipping">My billing address is the same as my shipping address</label>
+    </div>
+
+    <fieldset class="address-fieldset">
+        <legend>Billing Address</legend>
+
+        <div class="form-group half-width">
+            <label for="billing-first-name">First Name *</label>
+            <input type="text" id="billing-first-name" required>
+        </div>
+
+        <div class="form-group half-width">
+            <label for="billing-last-name">Last Name *</label>
+            <input type="text" id="billing-last-name" required>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="billing-address1">Address Line 1 *</label>
+            <input type="text" id="billing-address1" required placeholder="Street, P.O. box, Company, etc">
+        </div>
+
+        <div class="form-group full-width">
+            <label for="billing-address2">Address Line 2 (Optional)</label>
+            <input type="text" id="billing-address2" placeholder="Apartment, suite, floor, etc">
+        </div>
+
+        <div class="form-group third-width">
+            <label for="billing-city">City *</label>
+            <input type="text" id="billing-city" required>
+        </div>
+
+        <div class="form-group third-width">
+            <label for="billing-state">State *</label>
+            <input type="text" id="billing-state" required>
+        </div>
+
+        <div class="form-group third-width">
+            <label for="billing-zip">Zip Code *</label>
+            <input type="text" id="billing-zip" required>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="billing-country">Country *</label>
+            <select id="billing-country" required>
+                <option value="">Select a Country</option>
+                <option>United States</option>
+                <option>Canada</option>
+                <option>India</option>
+            </select>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="billing-phone">Phone Number *</label>
+            <input type="tel" id="billing-phone" required>
+        </div>
+
+    </fieldset>
+
+    <fieldset class="payment-fieldset">
+        <legend>Payment Details</legend>
+
+        <div class="form-group full-width">
+            <label for="card-number">Card Number *</label>
+            <input type="text" id="card-number" required placeholder="XXXX XXXX XXXX XXXX">
+            <small class="security-note">🔒 All transactions are secure and encrypted.</small>
+        </div>
+
+        <div class="form-group half-width">
+            <label for="card-name">Name on Card *</label>
+            <input type="text" id="card-name" required>
+        </div>
+
+        <div class="form-group third-width">
+            <label for="card-expiry">Expiry Date *</label>
+            <input type="text" id="card-expiry" required placeholder="MM/YY">
+        </div>
+
+        <div class="form-group third-width">
+            <label for="card-cvv">CVV *</label>
+            <input type="password" id="card-cvv" required maxlength="4">
+        </div>
+    </fieldset>
+
+    <button type="submit" class="submit-button">Review Order & Pay</button>
+</form>
+
+</body>
+</html>

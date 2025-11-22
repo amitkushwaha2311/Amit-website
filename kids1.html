@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Loom</title>
+
+<style>
+    body {
+        background-color: #f7f7f7;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #222;
+    }
+
+    
+    .header {
+        background: #111;
+        padding: 15px 25px;
+        display: flex;
+        align-items: center;
+    }
+    .header h2 {
+        color: #00e0ff;
+        margin: 0;
+    }
+    .header a {
+        text-decoration: none;
+    }
+
+    
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 20px;
+    }
+    .gallery img {
+        width: 230px;
+        height: 330px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+        transition: transform 0.3s;
+    }
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
+    
+    .product-box {
+        background: white;
+        padding: 20px;
+        margin: 20px auto;
+        width: 90%;
+        max-width: 600px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+    }
+    .deal {
+        color: brown;
+        font-size: 24px;
+        margin-top: 10px;
+    }
+    .price {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .old-price {
+        color: gray;
+        font-size: 16px;
+    }
+
+    
+    .btn {
+        background: #0077cc;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: 0.3s;
+    }
+    .btn:hover {
+        background: #005fa3;
+    }
+
+</style>
+</head>
+
+<body>
+
+
+<div class="header">
+    <a href="#">
+        <h2>Urban Loom.in</h2>
+    </a>
+</div>
+
+
+<div class="gallery">
+    <img src="hh1.jpg">
+    <img src="hh.jpg">
+    <img src="hh2.jpg">
+    
+    
+</div>
+
+
+<div class="product-box">
+    <p>
+        <strong>Men's Solid Slim Fit Cotton Casual Shirt</strong><br>
+        Plain | Full Sleeve | Summer Collection (Plus Sizes Available)<br>
+        <span style="color: green;">✔ 50+ bought in the past month</span>
+    </p>
+
+    <h2 class="deal">Limited Time Deal</h2>
+
+    <div class="price">
+        49% Off – 2399 rs <br>
+        <span class="old-price"><strike>5000 rs</strike></span>
+    </div>
+
+    <button class="btn" onclick="document.location='bill.html'">BUY NOW</button>
+</div>
+
+</body>
+</html>
